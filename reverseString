@@ -1,0 +1,14 @@
+public class Reverse {
+
+    // Function to reverse the input string
+    public static String reverseWord(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        return sb.reverse().toString();
+    }
+
+    // Optional: Test the function
+    public static void main(String[] args) {
+        String input = "Hello";
+        System.out.println("Reversed: " + reverseWord(input));
+    }
+}
