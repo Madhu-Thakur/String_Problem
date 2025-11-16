@@ -1,0 +1,32 @@
+import java.util.*;
+class Solution {
+    public boolean areRotations(String s1, String s2) {
+        // Step 1: If lengths differ, cannot be rotations
+        if (s1.length() != s2.length()) return false;
+
+        // Step 2: If both are empty, they are rotations
+        if (s1.length() == 0) return true;
+
+        // Step 3: Concatenate s1 with itself
+        String temp = s1 + s1;
+
+        // Step 4: Check if s2 is inside temp
+        return temp.contains(s2);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        Solution obj = new Solution();
+        boolean result = obj.areRotations(s1, s2);
+
+        System.out.println(result);
+
+        sc.close();
+    }
+}
