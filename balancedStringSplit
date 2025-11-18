@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Solution {
+    public int balancedStringSplit(String s) {
+        int count = 0;    // number of balanced substrings
+        int balance = 0;  // difference between L and R
+
+        for (char c : s.toCharArray()) {
+            if (c == 'L') balance++;
+            else balance--;
+
+            // When balance becomes zero, one balanced substring found
+            if (balance == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();  // input string
+
+        Solution obj = new Solution();
+        System.out.println(obj.balancedStringSplit(s)); // output result
+
+        sc.close();
+    }
+}
